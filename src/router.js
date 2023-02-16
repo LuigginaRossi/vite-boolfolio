@@ -14,27 +14,27 @@ const router= createRouter({
         {
             path:'/',
             name:'home',
-            component: 'HomePage',
+            component: HomePage,
         },
         {
             path:'/projects',
             name: 'projects',
-            component: 'ProjectsPage'
+            component: ProjectsPage
         },
         {
             path: '/projects/:id',
             name: 'project',
-            component: 'SingleProjectPage'
+            component: SingleProjectPage
         },
         {
             path: '/about-me',
             name: 'about',
-            component: 'AboutPage'
+            component: AboutPage
         },
         // {
         //     path: '/contacts',
-        //     name: 'contact-us',
-        //     component: 'ContactPage'
+        //     name: 'contact-me',
+        //     component: ContactsPage
         // }
     ]
 });
