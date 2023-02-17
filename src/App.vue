@@ -21,4 +21,5 @@ import TheHeader from './components/TheHeader.vue';
 
 <style lang="scss">
 @use 'styles/main.scss';
+
 </style>

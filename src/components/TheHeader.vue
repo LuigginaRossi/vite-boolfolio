@@ -31,7 +31,7 @@
 <template >
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand">LOGO</a>
+            <a class="navbar-brand text-danger">LOGO</a>
             
         <button
             class="navbar-toggler"

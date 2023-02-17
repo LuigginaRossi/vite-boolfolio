@@ -25,7 +25,7 @@
 </script>
 
 <template>
-    <h1>Projects Page</h1>
+    <h1 >Projects Page</h1>
 
     <div class="row row-cols-3 row-cols-md-4 g-4">
      <div class="col"  v-for="project in projects" :key="project.id">
@@ -39,6 +39,9 @@
                         <h5 class="card-title">{{ project.name }}</h5>
                         <p class="card-text">{{ project.description }}</p>
                         <p class="card-text">{{ project.type?.name}}</p>
+                        <p v-for="technology in project.technologies" :key="technology.id">
+                           TECNOLOGY: {{ technology.name }}
+                        </p>
                     </div>
                     
                     <router-link  class="btn btn-primary" :to="{name: 'project', params:{ id: project.id }}"> More Info </router-link>

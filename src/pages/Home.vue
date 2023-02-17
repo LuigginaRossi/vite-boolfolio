@@ -11,8 +11,8 @@
 </script>
 
 <template>
-    <h1>Home</h1>
-    <router-link :to="{name: 'projects'}"> All Projects</router-link>
+    <h1 class="">Home</h1>
+    <!-- <router-link :to="{name: 'projects'}"> All Projects</router-link> -->
 
    <section class="bg-dark text-light jumb py-4"> 
 
