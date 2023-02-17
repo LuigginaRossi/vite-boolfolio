@@ -5,6 +5,7 @@ import HomePage from './pages/Home.vue';
 import ProjectsPage from './pages/Projects.vue';
 import SingleProjectPage from './pages/SingleProject.vue';
 import AboutPage from './pages/About.vue';
+import ContactsPage from './pages/Contacts.vue'
 // import ContactsPage from './pages/Contactsvue';
 
 
@@ -19,23 +20,23 @@ const router= createRouter({
         {
             path:'/projects',
             name: 'projects',
-            component: ProjectsPage
+            component: ProjectsPage,
         },
         {
             path: '/projects/:id',
             name: 'project',
-            component: SingleProjectPage
+            component: SingleProjectPage,
         },
         {
             path: '/about-me',
             name: 'about',
-            component: AboutPage
+            component: AboutPage,
         },
-        // {
-        //     path: '/contacts',
-        //     name: 'contact-me',
-        //     component: ContactsPage
-        // }
+         {
+             path: '/contacts',
+             name: 'contacts',
+             component: ContactsPage
+         }
     ]
 });
 

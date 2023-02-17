@@ -15,7 +15,8 @@ import axios from 'axios';
                     this.project = resp.data;
                     console.log(this.project);
                 })
-            }
+
+            },
         },
         mounted(){
            this.fetchProject();
@@ -33,8 +34,11 @@ import axios from 'axios';
         <div class="card-body">
             <h5 class="card-title">{{ project.name }}</h5>
             <p class="card-text">{{ project.description }}</p>
+            <!-- <p class="card-text">{{ project.type?.name}}</p> -->
+
         </div>
-        <!-- <router-link :to="{name: 'project', params:{id: 'project.id'}}"> More Info</router-link> -->
+       
+         <!-- <router-link :to="{name: 'project', params:{id: 'project.id'}}"> More Info</router-link>  -->
     </div>
     </div>
     
