@@ -9,6 +9,7 @@ body{
     // color: ;
     #app{
         width: 100%;
+        max-width: 100%;
         margin: 0 auto;
         padding: 0;
         .card{
@@ -18,4 +19,11 @@ body{
 }
 h1{
     padding: 4rem 0;
+}
+
+.card{
+    img{
+        aspect-ratio: 2/3;
+        object-fit: cover;
+    }
 }
