@@ -7,16 +7,32 @@
             return{
                 backendUrl: 'http://127.0.0.1:8000',
                 projects: [],
+                currentPage: 1,
             }
         },
         methods:{
             fetchProjects(){
-                axios.get(`${this.backendUrl}/api/projects`)
+                axios.get(`${this.backendUrl}/api/projects`,{
+                    params:{
+                        ...this.$route.query,
+                    }
+                })
                 .then((resp) => {
-                    this.projects = resp.data;
-                    console.log(this.projects);
+                    this.projects = resp.data.data;
+                    // console.log(this.projects);
+                    this.currentPage= resp.data.current_page;
                 })
             },
+            prev(){
+                setTimeout(()=>{
+                    this.fetchProjects();
+                }, 500)
+            },
+            next(){
+                setTimeout(()=>{
+                    this.fetchProjects();
+                }, 500)
+            }
         },
         mounted(){
            this.fetchProjects();
@@ -25,8 +41,31 @@
 </script>
 
 <template>
-    <h1 >Projects Page</h1>
+
     <div class="container">
+        <h1 >Projects Page</h1>
+        <!-- pagination: -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+            <li class="page-item">
+                <router-link :to="{name: 'projects', query: { page: currentPage - 1}}" 
+                class="page-link" 
+                @click="prev">
+                    Previous
+                </router-link>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">{{currentPage}} </a></li>
+            <li class="page-item">
+                <router-link :to="{name: 'projects', query: {page: currentPage + 1}}" 
+                class="page-link" 
+                @click="next">
+                    Next
+                </router-link>
+            </li>
+            </ul>
+        </nav>
+
+        
         <div class="row row-cols-3 row-cols-md-4 g-4">
             <div class="col"  v-for="project in projects" :key="project.id">
                 <!-- <div v-for="El in project" :key="El.id"> -->
