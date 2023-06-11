@@ -70,13 +70,19 @@
             <div class="col"  v-for="project in projects" :key="project.id">
                 <!-- <div v-for="El in project" :key="El.id"> -->
                     <div class="card">
-                        <div v-if="project.cover_img">
+                         <!-- <div  v-if="project.cover_img.includes("http")">
+                           IMG
+                        </div>  -->
+
+                        <!-- <div v-if>
                             <img :src="`${backendUrl}/storage/${project.cover_img}`" class="card-img-top" alt="...">
-                        </div> 
-                        
+                        </div>  -->
+
+                         
+
                         <div class="card-body">
-                            <h5 class="card-title">{{ project.name }}</h5>
-                            <p class="card-text">{{ project.description }}</p>
+                            <h5 class="card-title">{{ project.name.substring(0,30)}}...</h5>
+                            <p class="card-text">{{ project.description.substring(0,20) }}...</p>
                             <p class="card-text">{{ project.type?.name }}</p>
                             
                         </div>
